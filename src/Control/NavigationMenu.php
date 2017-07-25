@@ -51,7 +51,7 @@ class NavigationMenu extends UI\Control
     public function itemCurrent(NavMenuLink $item)
     {
         /** @var NavMenuLink $subitem */
-        foreach ($item->items as $subitem) {
+        foreach ($item->getItems() as $subitem) {
             if (!($subitem instanceof NavMenuLink)) {
                 continue;
             }
@@ -59,11 +59,10 @@ class NavigationMenu extends UI\Control
             if ($subitem->getRole() == 'dropdown') {
                 return $this->itemCurrent($subitem);
             }
-            if ($this->presenter->isLinkCurrent($subitem->target)) {
+            if ($this->presenter->isLinkCurrent($subitem->getTarget())) {
                 return true;
             }
         }
-
         return false;
     }
 
