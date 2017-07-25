@@ -3,7 +3,8 @@
     "description": "Nette control integration of sestep/navigation",
     "type": "library",
     "require": {
-        "nette/application": "~2.4"
+        "nette/application": "~2.4",
+        "sestep/navigation": "dev-master"
     },
     "license": "MIT",
     "authors": [
